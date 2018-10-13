@@ -29,7 +29,7 @@ public class WebSocketController {
     @SendTo("/topic/game-state")
     public GameState send(InputAction inputAction) throws Exception {
         Player player = gameState.getPlayers().get(inputAction.getId());
-
+        System.out.println("HIT");
 
         return new GameState();
     }

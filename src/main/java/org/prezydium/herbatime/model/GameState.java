@@ -8,7 +8,7 @@ import java.util.Map;
 @Component
 public class GameState {
 
-    private Map<Integer ,Player> players;
+    private Map<Integer, Player> players;
 
     public GameState() {
         this.players = new HashMap<>();

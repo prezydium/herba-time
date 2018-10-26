@@ -15,10 +15,8 @@ public class GameEngine {
         this.gameState = gameState;
     }
 
-    public GameState processAction(InputAction inputAction){
-        return null;
-        
+    public GameState processAction(InputAction inputAction) {
+        PlayerMover.movePlayeer(gameState.getPlayers().get(inputAction.getId()), inputAction.getAction());
+        return gameState;
     }
-
-
 }

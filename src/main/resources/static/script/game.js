@@ -14,8 +14,8 @@ function connect() {
 }
 
 function sendAction(action) {
-        stompClient.send("/app/input", {},
-            JSON.stringify({'id': playerId, 'Action': action}));
+    stompClient.send("/app/input", {},
+        JSON.stringify({'id': playerId, 'Action': action}));
 }
 
 function updateGameState(gameState) {
@@ -25,12 +25,13 @@ function updateGameState(gameState) {
         + messageOutput.msgText + " (" + messageOutput.time + ")"));
     chat.appendChild(p);
 }
+
 window.addEventListener("keyup", function (event) {
     event.preventDefault();
     if (event.keyCode === 87 ||
         event.keyCode === 83 ||
         event.keyCode === 65 ||
-        event.keyCode === 68 ) {
+        event.keyCode === 68) {
         sendAction(event);
     }
 });

@@ -26,7 +26,7 @@ public class LoginController {
         } else {
             generateId.bestowID();
 
-            return new RedirectView("game-controller");
+            return new RedirectView("game-view");
         }
     }
 }

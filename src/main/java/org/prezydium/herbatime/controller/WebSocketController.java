@@ -1,6 +1,7 @@
 package org.prezydium.herbatime.controller;
 
 
+import org.prezydium.herbatime.logic.GameEngine;
 import org.prezydium.herbatime.model.GameState;
 import org.prezydium.herbatime.model.InputAction;
 import org.prezydium.herbatime.model.Player;
@@ -17,10 +18,10 @@ public class WebSocketController {
 
     private Logger logger = LoggerFactory.getLogger(WebSocketController.class);
 
-    private final GameState gameState;
+    private final GameEngine gameState;
 
     @Autowired
-    public WebSocketController(GameState gameState) {
+    public WebSocketController(GameEngine gameState) {
         this.gameState = gameState;
     }
 
@@ -28,9 +29,7 @@ public class WebSocketController {
     @MessageMapping("/input")
     @SendTo("/topic/game-state")
     public GameState send(InputAction inputAction) throws Exception {
-        Player player = gameState.getPlayers().get(inputAction.getId());
         System.out.println("HIT");
-
-        return new GameState();
+        return gameState.processAction(inputAction);
     }
 }

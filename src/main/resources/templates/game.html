@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,17 +16,18 @@
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-    <script src="../static/script/game.js"></script>
+    <script src="/script/game.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/style1.css">
     <title>Herbatime</title>
 </head>
 <body>
 <div class="container">
     <div id="game-view">
-
-
     </div>
-    hello there
+    <span th:text="'Hello there: ' + ${playerNick}"></span>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+    </canvas>
+
 
 </div>
 </body>

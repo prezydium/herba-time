@@ -5,6 +5,9 @@ public class InputAction {
     private int id;
     private Action action;
 
+    public InputAction() {
+    }
+
     public InputAction(int id, Action action) {
         this.id = id;
         this.action = action;

@@ -8,8 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class GameController {
 
     @GetMapping("game-view")
-    public ModelAndView loadGame(){
+    public ModelAndView loadGame(String nick){
+        System.out.println(nick);
         ModelAndView modelAndView =  new ModelAndView("game");
+        modelAndView.addObject("playerNick", nick);
         return modelAndView;
     }
 

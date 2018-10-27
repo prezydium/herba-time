@@ -4,7 +4,6 @@ package org.prezydium.herbatime.controller;
 import org.prezydium.herbatime.logic.GameEngine;
 import org.prezydium.herbatime.model.GameState;
 import org.prezydium.herbatime.model.InputAction;
-import org.prezydium.herbatime.model.Player;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class WebSocketController {
 
-    private Logger logger = LoggerFactory.getLogger(WebSocketController.class);
+    private final static Logger log = LoggerFactory.getLogger(WebSocketController.class);
 
     private final GameEngine gameState;
 
@@ -29,7 +28,7 @@ public class WebSocketController {
     @MessageMapping("/input")
     @SendTo("/topic/game-state")
     public GameState send(InputAction inputAction) throws Exception {
-        System.out.println("HIT");
+        log.info(inputAction.getKeyCode() + "  " + inputAction.getId());
         return gameState.processAction(inputAction);
     }
 }

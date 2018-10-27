@@ -1,25 +1,24 @@
 package org.prezydium.herbatime.logic;
 
-import org.prezydium.herbatime.model.Action;
 import org.prezydium.herbatime.model.Player;
 
 public class PlayerMover {
 
-    public static void movePlayeer(Player player, Action action) {
+    public static void movePlayer(Player player, int action) {
         int x = player.getPosX();
         int y = player.getPosY();
 
         switch (action) {
-            case UP:
+            case 87:
                 player.setPosX(x + 5);
                 break;
-            case DOWN:
+            case 83:
                 player.setPosX(x - 5);
                 break;
-            case LEFT:
+            case 65:
                 player.setPosY(y - 5);
                 break;
-            case RIGHT:
+            case 68:
                 player.setPosY(y + 5);
                 break;
         }

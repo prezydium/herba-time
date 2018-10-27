@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,12 +23,19 @@
 <body>
 <div class="container">
     <div id="game-view">
+        <h1><span th:text="'Hello there: ' + ${playerNick}"></span></h1>
+        <canvas id="myCanvas" width="500" height="400" style="border:1px solid #000000;">
+        </canvas>
     </div>
-    <span th:text="'Hello there: ' + ${playerNick}"></span>
-    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-    </canvas>
-
 
 </div>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    const playerId = /*[[${playerId}]]*/ 'default';
+    console.log(playerId);
+
+    /*]]>*/
+</script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-var playerId;
-
 var stompClient = null;
 
 function connect() {
@@ -13,17 +11,13 @@ function connect() {
     });
 }
 
-function sendAction(action) {
+function sendAction(keyCode, playerId) {
     stompClient.send("/app/input", {},
-        JSON.stringify({'id': playerId, 'Action': action}));
+        JSON.stringify({'id': playerId, 'keyCode': keyCode}));
 }
 
 function updateGameState(gameState) {
-    var chat = document.getElementById('chat-room');
-    var p = document.createElement('p');
-    p.appendChild(document.createTextNode(messageOutput.nick + ": "
-        + messageOutput.msgText + " (" + messageOutput.time + ")"));
-    chat.appendChild(p);
+    //TODO process data from server
 }
 
 window.addEventListener("keyup", function (event) {
@@ -32,7 +26,7 @@ window.addEventListener("keyup", function (event) {
         event.keyCode === 83 ||
         event.keyCode === 65 ||
         event.keyCode === 68) {
-        sendAction(event);
+        sendAction(event.keyCode, playerId);
     }
 });
 

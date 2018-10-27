@@ -3,14 +3,14 @@ package org.prezydium.herbatime.model;
 public class InputAction {
 
     private int id;
-    private Action action;
+    private int keyCode;
 
     public InputAction() {
     }
 
-    public InputAction(int id, Action action) {
+    public InputAction(int id, int keyCode) {
         this.id = id;
-        this.action = action;
+        this.keyCode = keyCode;
     }
 
     public int getId() {
@@ -21,11 +21,11 @@ public class InputAction {
         this.id = id;
     }
 
-    public Action getAction() {
-        return action;
+    public int getKeyCode() {
+        return keyCode;
     }
 
-    public void setAction(Action action) {
-        this.action = action;
+    public void setKeyCode(int keyCode) {
+        this.keyCode = keyCode;
     }
 }

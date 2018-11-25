@@ -9,16 +9,16 @@ public class PlayerMover {
         int y = player.getPosY();
 
         switch (action) {
-            case 87:
+            case 68:
                 player.setPosX(x + 5);
                 break;
-            case 83:
+            case 65:
                 player.setPosX(x - 5);
                 break;
-            case 65:
+            case 87:
                 player.setPosY(y - 5);
                 break;
-            case 68:
+            case 83:
                 player.setPosY(y + 5);
                 break;
         }

@@ -18,12 +18,12 @@ function sendAction(keyCode, playerId) {
 }
 
 function updateGameState(gameState) {
-    console.log(gameState);
     var context = gameArea.getContext('2d');
+    context.clearRect(0, 0, gameArea.width, gameArea.height);
     var players = gameState.players;
     Object.keys(players).forEach(function (key) {
         var player = players[key];
-        context.fillStyle = 'red';
+        context.fillStyle = player.color;
         context.fillRect(player.posX, player.posY, 50, 50);
     });
 }

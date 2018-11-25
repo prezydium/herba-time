@@ -8,7 +8,7 @@ public class Player {
 
     private String name;
 
-    private String graphic;
+    private String color;
 
     public int getPosX() {
         return posX;
@@ -34,18 +34,18 @@ public class Player {
         this.name = name;
     }
 
-    public String getGraphic() {
-        return graphic;
+    public String getColor() {
+        return color;
     }
 
-    public void setGraphic(String graphic) {
-        this.graphic = graphic;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public Player(int posX, int posY, String name, String graphic) {
+    public Player(int posX, int posY, String name, String color) {
         this.posX = posX;
         this.posY = posY;
         this.name = name;
-        this.graphic = graphic;
+        this.color = color;
     }
 }

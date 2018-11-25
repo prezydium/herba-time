@@ -17,11 +17,11 @@ public class WebSocketController {
 
     private final static Logger log = LoggerFactory.getLogger(WebSocketController.class);
 
-    private final GameEngine gameState;
+    private final GameEngine gameEngine;
 
     @Autowired
-    public WebSocketController(GameEngine gameState) {
-        this.gameState = gameState;
+    public WebSocketController(GameEngine gameEngine) {
+        this.gameEngine = gameEngine;
     }
 
 
@@ -29,6 +29,6 @@ public class WebSocketController {
     @SendTo("/topic/game-state")
     public GameState send(InputAction inputAction) throws Exception {
         log.info(inputAction.getKeyCode() + "  " + inputAction.getId());
-        return gameState.processAction(inputAction);
+        return gameEngine.processAction(inputAction);
     }
 }

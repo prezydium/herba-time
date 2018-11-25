@@ -3,6 +3,7 @@ package org.prezydium.herbatime.logic;
 import org.prezydium.herbatime.model.GameState;
 import org.prezydium.herbatime.model.InputAction;
 import org.prezydium.herbatime.model.Player;
+import org.prezydium.herbatime.util.RandomRGBGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class GameEngine {
     }
 
     public void addNewPlayer(int id, String nick){
-        Player newPlayer = new Player(0, 0, nick, "test");
+        Player newPlayer = new Player(0, 0, nick, RandomRGBGenerator.generateRandomRGB());
         gameState.getPlayers().put(id, newPlayer);
     }
 }

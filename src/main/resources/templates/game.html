@@ -16,15 +16,13 @@
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-    <script src="/script/game.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/style1.css">
     <title>Herbatime</title>
 </head>
 <body>
 <div class="container">
     <div id="game-view">
         <h1><span th:text="'Hello there: ' + ${playerNick}"></span></h1>
-        <canvas id="myCanvas" width="500" height="400" style="border:1px solid #000000;">
+        <canvas id="gameArea" width="500" height="400" style="border:1px solid #000000;">
         </canvas>
     </div>
 
@@ -37,5 +35,6 @@
 
     /*]]>*/
 </script>
+<script src="/script/game.js"></script>
 </body>
 </html>

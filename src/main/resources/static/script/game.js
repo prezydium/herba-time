@@ -1,4 +1,5 @@
 var stompClient = null;
+var gameArea = document.getElementById('gameArea');
 
 function connect() {
     var socket = new SockJS('/input');
@@ -17,7 +18,14 @@ function sendAction(keyCode, playerId) {
 }
 
 function updateGameState(gameState) {
-    //TODO process data from server
+    console.log(gameState);
+    var context = gameArea.getContext('2d');
+    var players = gameState.players;
+    Object.keys(players).forEach(function (key) {
+        var player = players[key];
+        context.fillStyle = 'red';
+        context.fillRect(player.posX, player.posY, 50, 50);
+    });
 }
 
 window.addEventListener("keyup", function (event) {
